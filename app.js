@@ -16,7 +16,7 @@ app.use(morgan('dev'));
 app.use('/docs', swaggerUI.serve, swaggerUI.setup(swaggerDocument));
 
 /* REGISTERING APP ROUTES */
-app.use('/video', videoRoutes);
+app.use('/videos', videoRoutes);
 // app.use('/buth', brouter);
 
 app.get(['/', '/home'], (_, res) => {

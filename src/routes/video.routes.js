@@ -3,6 +3,7 @@ const VideoControllers = require('../controllers/video.controllers');
 
 const videoRoutes = Router();
 
-videoRoutes.get('/', VideoControllers.getAllVideos);
+videoRoutes.get('/:feId/all', VideoControllers.getAllVideos);
+videoRoutes.post('/:feId/new', VideoControllers.createVideo);
 
 module.exports = videoRoutes;
