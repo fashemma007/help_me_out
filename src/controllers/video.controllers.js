@@ -15,7 +15,7 @@ class VideoControllers {
       });
       return res
         .status(201)
-        .json({ message: 'video is ready', newVid });
+        .json({ message: 'video is ready', data: newVid });
     } catch (error) {
       return res.status(500).json({ error: error.message });
     }

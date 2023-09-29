@@ -1,0 +1,81 @@
+/videos/{feId}/all:
+  get:
+    tags:
+      - Videos
+    summary: Get all videos
+    description: Get all videos
+    produces:
+      - application/json
+    consumes:
+      - application/json
+    parameters:
+      - in: path
+        name: feId
+        type: number
+        example: 1
+        required: true
+        description: Frontend Dev id
+      - in: query
+        name: page
+        type: number
+        example: 1
+        description: Page number
+      - in: query
+        name: size
+        type: number
+        example: 9
+        description: number of objects to return
+    responses:
+      200:
+        description: Success
+        schema:
+          type: object
+          properties:
+            page:
+              type: string
+              example: 1
+            size:
+              type: string
+              example: 1
+            videos:
+              type: array
+              items:
+                type: object
+                properties:
+                  _id:
+                    type: string
+                    example: 6yhgvfayuijokl3men
+                  name:
+                    type: string
+                    example: super football
+                  url:
+                    type: string
+                    example: https://www.youtube.com/watch?v=g8lI7UB4b2E
+                  likes:
+                    type: number
+                    example: 6
+                  views:
+                    type: number
+                    example: 6
+                  shares:
+                    type: number
+                    example: 2
+                  feId:
+                    type: number
+                    example: 1
+      400:
+        description: Not Found
+        schema:
+          type: object
+          properties:
+            error:
+              type: string
+              example: not found
+      500:
+        description: Server error
+        schema:
+          type: object
+          properties:
+            message:
+              type: string
+              example: Something went wrong

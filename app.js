@@ -16,10 +16,10 @@ app.use(morgan('dev'));
 app.use('/docs', swaggerUI.serve, swaggerUI.setup(swaggerDocument));
 
 /* REGISTERING APP ROUTES */
-app.use('/videos', videoRoutes);
+app.use('/api/videos', videoRoutes);
 // app.use('/buth', brouter);
 
-app.get(['/', '/home'], (_, res) => {
+app.get(['/', '/api'], (_, res) => {
   res.status(200).json(`Welcome ${APP_NAME} API`);
 });
 

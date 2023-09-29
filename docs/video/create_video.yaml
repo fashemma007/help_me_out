@@ -1,0 +1,69 @@
+/videos/{feId}/new:
+  post:
+    tags:
+      - Videos
+    summary: Save a newly recorded video
+    description: Returns info of newly recorded video
+    parameters:
+      - in: path
+        name: feId
+        type: number
+        example: 1
+        required: true
+        description: Frontend Dev id
+      - in: body
+        name: body
+        schema:
+          type: object
+          properties:
+            name:
+              type: string
+              description: name of the video
+              example: learn abc
+            url:
+              type: string
+              description: url of the video
+              example: https://www.learn.abc
+
+    responses:
+      201: # status code
+        description: Created
+        schema:
+          type: object
+          properties:
+            message:
+              type: string
+              example: video is ready
+            data:
+              type: object
+              properties:
+                name:
+                  type: string
+                  example: Wonderful stunts
+                feId:
+                  type: number
+                  example: 1
+                url:
+                  type: string
+                  example: https://www.youtube.com/watch?v=PggH7oowoA2g
+                email:
+                  type: string
+                  example: emiwest@yopmail.com
+                likes:
+                  type: number
+                  example: 1
+                views:
+                  type: number
+                  example: 5
+                shares:
+                  type: number
+                  example: 3
+                _id:
+                  type: string
+                  example: 4e9etg8rg4j51jtwas8a4
+                createdAt:
+                  type: string
+                  example: 2023-09-29T23:23:29.696Z
+                updatedAt:
+                  type: string
+                  example: 2023-09-29T23:23:29.696Z
